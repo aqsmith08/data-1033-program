@@ -1,0 +1,31 @@
+Agency_Authority,Agency_Jurisdiction
+Sheriff,County
+Trooper,State
+Police,Municipal
+DOJ,Federal
+Marshals,Federal
+FBI Agents,Federal
+Corrections,County
+Park,State
+Forest Service,Federal
+DHS,Federal
+Public Safety,Unknown
+Highway Patrol,State
+Drug Task Force,County
+"Colleges, Universities",Other
+Training Academies,State
+Dept of Interior,Federal
+Secret Service,Federal
+Airports,State
+District Attorney,Unknown
+Constable,County
+Dept of State,Federal
+Fish and WildLife,State
+Strange and Unique,Other
+Local Services,Municipal
+Postal,Federal
+HUD,Federal
+Other Federal Agencies (Non Security),Federal
+Other State Agencies (Non Security),State
+Other Country Agencies (Non Security),County
+ATF,Federal
