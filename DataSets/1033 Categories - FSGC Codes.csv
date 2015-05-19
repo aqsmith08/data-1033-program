@@ -1,0 +1,672 @@
+FSGC,FSGC_Title
+6004,Rotary Joints
+1005,Guns through 30mm
+1105,Nuclear Bombs
+1305,Ammunition through 30mm
+1905,Combat Ships and Landing Vessels
+2305,Ground Effect Vehicles
+2805,Gasoline Reciprocating Engines Except Aircra...
+3405,Saws and Filing Machines
+3605,Food Products Machinery and Equipment
+3805,Earth Moving and Excavating Equipment
+5305,Screws
+5805,Telephone and Telegraph Equipment
+5905,Resistors
+6005,Couplers Splitters
+6105,Motors Electrical
+6505,Drugs and Biologicals
+6605,Navigational Instruments
+7105,Household Furniture
+8105,Bags and Sacks
+8305,Textile Fabrics
+8405,Outerwear Men's
+8905,Meat Poultry
+9505,Wire Nonelectrical
+9905,Signs Advertising Displays
+5306,Bolts
+6006,Attenuators
+5307,Studs
+6007,Filters
+3408,Machining Centers and Way-Type Machines
+6008,Optical Multiplexers/Demultiplexers
+6508,Medicated Cosmetics and Toiletries
+6509,Drugs and Biologicals Veterinary Use
+1010,Guns over 30mm up to 75mm
+1110,Nuclear Projectiles
+1210,Fire Control Directors
+1310,Ammunition over 30mm up to 75mm
+1410,Guided Missiles
+1510,Aircraft Fixed Wing
+1610,Aircraft Propellers and Components
+1710,Aircraft Landing Equipment
+1810,Space Vehicles
+1910,Transport Vessels Passenger and Troop
+2010,Ship and Boat Propulsion Components
+2210,Locomotives
+2310,Passenger Motor Vehicles
+2410,Tractor Full Tracked
+2510,Vehicular Cab Body
+2610,Tires and Tubes Pneumatic
+2810,Gasoline Reciprocating Engines Aircraft Prim...
+2910,Engine Fuel System Components Nonaircraft
+3010,Torque Converters and Speed Changers
+3110,Bearings Antifriction
+3210,Sawmill and Planing Mill Machinery
+3410,Electrical and Ultrasonic Erosion Machines
+3510,Laundry and Dry Cleaning Equipment
+3610,Printing Duplicating
+3710,Soil Preparation Equipment
+3810,Cranes and Crane-Shovels
+3910,Conveyors
+4010,Chain and Wire Rope
+4110,Refrigeration Equipment
+4210,Firefighting Equipment
+4310,Compressors and Vacuum Pumps
+4410,Industrial Boilers
+4510,Plumbing Fixtures and Accessories
+4610,Water Purification Equipment
+4710,Pipe Tube and Rigid Tubing
+4810,Valves Powered
+4910,Motor Vehicle Maintenance and Repair Shop Spe...
+5110,Hand Tools Edged
+5210,Measuring Tools Craftsmen's
+5310,Nuts and Washers
+5410,Prefabricated and Portable Buildings
+5510,Lumber and Related Basic Wood Materials
+5610,Mineral Construction Materials Bulk
+5810,Communications Security Equipment and Compone...
+5910,Capacitors
+6010,Fiber Optic Conductors
+6110,Electrical Control Equipment
+6210,Indoor and Outdoor Electric Lighting Fixtures
+6310,Traffic and Transit Signal Systems
+6510,Surgical Dressing Materials
+6610,Flight Instruments
+6710,Cameras Motion Picture
+6810,Chemicals
+6910,Training Aids
+7010,Information Technology Equipment System Confi...
+7110,Office Furniture
+7210,Household Furnishings
+7310,Food Cooking Baking
+7510,Office Supplies
+7610,Books and Pamphlets
+7710,Musical Instruments
+7810,Athletic and Sporting Equipment
+7910,Floor Polishers and Vacuum Cleaning Equipment
+8010,Paints Dopes
+8110,Drums and Cans
+8310,Yarn and Thread
+8410,Outerwear Women's
+8510,Perfumes Toilet Preparations
+8710,Forage and Feed
+8810,Live Animals Raised for Food
+8910,Dairy Foods and Eggs
+9110,Fuels Solid
+9310,Paper and Paperboard
+9410,Crude Grades of Plant Materials
+9510,Bars and Rods
+9610,Ores
+9910,Jewelry
+3411,Boring Machines
+3611,Industrial Marking Machines
+5411,Rigid Wall Shelters
+5811,Other Cryptologic Equipment and Components
+3412,Broaching Machines
+3413,Drilling and Tapping Machines
+3414,Gear Cutting and Finishing Machines
+1015,Guns 75mm through 125mm
+1115,Nuclear Warheads and Warhead Sections
+1315,Ammunition 75mm through 125mm
+1615,Helicopter Rotor Blades Drive Mechanisms and...
+1915,Cargo and Tanker Vessels
+2815,Diesel Engines and Components
+2915,Engine Fuel System Components Aircraft and M...
+3415,Grinding Machines
+3615,Pulp and Paper Industries Machinery
+3815,Crane and Crane-Shovel Attachments
+3915,Materials Feeders
+5315,Nails Machine Keys
+5815,Teletype and Facsimile Equipment
+5915,Filters and Networks
+6015,Fiber Optic Cables
+6115,Generators and Generator Sets Electrical
+6515,Medical and Surgical Instruments Equipment
+6615,Automatic Pilot Mechanisms and Airborne Gyro ...
+8115,Boxes Cartons
+8315,Notions and Apparel Findings
+8415,Clothing Special Purpose
+8915,Fruits and Vegetables
+9515,Plate Sheet
+9915,Collectors' and/or Historical Items
+3416,Lathes
+6116,Fuel Cell Power Units Components
+3417,Milling Machines
+6117,Solar Electric Power Systems
+3418,Planers and Shapers
+3419,Miscellaneous Machine Tools
+5419,Collective Modular Support System
+1020,Guns over 125mm through 150mm
+1120,Nuclear Depth Charges
+1220,Fire Control Computing Sights and Devices
+1320,Ammunition over 125mm
+1420,Guided Missile Components
+1520,Aircraft Rotary Wing
+1620,Aircraft Landing Gear Components
+1720,Aircraft Launching Equipment
+1820,Space Vehicle Components
+1920,Fishing Vessels
+2020,Rigging and Rigging Gear
+2220,Rail Cars
+2320,Trucks and Truck Tractors Wheeled
+2420,Tractors Wheeled
+2520,Vehicular Power Transmission Components
+2620,Tires and Tubes Pneumatic
+2820,Steam Engines Reciprocating; and Components
+2920,Engine Electrical System Components Nonaircr...
+3020,Gears Pulleys
+3120,Bearings Plain
+3220,Woodworking Machines
+3520,Shoe Repairing Equipment
+3620,Rubber and Plastics Working Machinery
+3720,Harvesting Equipment
+3820,Mining Rock Drilling
+3920,Material Handling Equipment Nonself-Propelle...
+4020,Fiber Rope Cordage
+4120,Air Conditioning Equipment
+4220,Marine Lifesaving and Diving Equipment
+4320,Power and Hand Pumps
+4420,Heat Exchangers and Steam Condensers
+4520,Space and Water Heating Equipment
+4620,Water Distillation Equipment Marine and Indu...
+4720,Hose and Flexible Tubing
+4820,Valves Nonpowered
+4920,Aircraft Maintenance and Repair Shop Speciali...
+5120,Hand Tools Nonedged
+5220,Inspection Gages and Precision Layout Tools
+5320,Rivets
+5420,Bridges Fixed and Floating
+5520,Millwork
+5620,Tile Brick
+5820,Radio and Television Communication Equipment...
+5920,Fuses Arrestors
+6020,Fiber Optic Cable Assemblies and Harnesses
+6120,Transformers: Distribution and Power Station
+6220,Electric Vehicular Lights and Fixtures
+6320,Shipboard Alarm and Signal Systems
+6520,Dental Instruments Equipment
+6620,Engine Instruments
+6720,Cameras Still Picture
+6820,Dyes
+6920,Armament Training Devices
+7020,Information Technology Central Processing Uni...
+7220,Floor Coverings
+7320,Kitchen Equipment and Appliances
+7420,Accounting and Calculating Machines
+7520,Office Devices and Accessories
+7720,Musical Instrument Parts and Accessories
+7820,Games Toys
+7920,Brooms Brushes
+8020,Paint and Artists' Brushes
+8120,Commercial and Industrial Gas Cylinders
+8320,Padding and Stuffing Materials
+8420,Underwear and Nightwear Men's
+8520,Toilet Soap Shaving Preparations
+8720,Fertilizers
+8820,Live Animals Not Raised for Food
+8920,Bakery and Cereal Products
+9320,Rubber Fabricated Materials
+9420,Fibers: Vegetable Animal
+9520,Structural Shapes
+9620,Minerals Natural and Synthetic
+9920,Smokers' Articles and Matches
+4921,Torpedo Maintenance Repair
+5821,Radio and Television Communication Equipment...
+6021,Fiber Optic Switches
+7021,Information Technology Central Processing Uni...
+3422,Rolling Mills and Drawing Machines
+7022,Information Technology Central Processing Uni...
+4923,Depth Charges and Underwater Mines Maintenanc...
+3424,Metal Heat Treating and Non-Thermal Treating ...
+1025,Guns over 150mm through 200mm
+1125,Nuclear Demolition Charges
+1325,Bombs
+1425,Guided Missile Systems Complete
+1725,Space Vehicle Launchers
+1925,Special Service Vessels
+2825,Steam Turbines and Components
+2925,Engine Electrical System Components Aircraft...
+3625,Textile Industries Machinery
+3825,Road Clearing Cleaning
+4925,Ammunition Maintenance Repair
+5325,Fastening Devices
+5825,Radio Navigation Equipment Except Airborne
+5925,Circuit Breakers
+6025,Fiber Optic Transmitters
+6125,Converters Electrical
+6525,Imaging Equipment and Supplies: Medical Dent...
+6625,Electrical and Electronic Properties Measurin...
+7025,Information Technology Input/Output and Stora...
+7125,Cabinets Lockers
+8125,Bottles and Jars
+8325,Fur Materials
+8425,Underwear and Nightwear Women's
+8925,Sugar Confectionery
+9525,Wire Nonelectrical
+9925,Ecclesiastical Equipment Furnishings
+3426,Metal Finishing Equipment
+5826,Radio Navigation Equipment Airborne
+6026,Fiber Optic Receivers
+1127,Nuclear Rockets
+1427,Guided Missile Subsystems
+4927,Rocket Maintenance Repair and Checkout Speci...
+6029,Optical Repeaters
+1030,Guns over 200mm through 300mm
+1130,Conversion Kits Nuclear Ordnance
+1230,Fire Control Systems Complete
+1330,Grenades
+1430,Guided Missile Remote Control Systems
+1630,Aircraft Wheel and Brake Systems
+1730,Aircraft Ground Servicing Equipment
+1830,Space Vehicle Remote Control Systems
+1930,Barges and Lighters Cargo
+2030,Deck Machinery
+2230,Right-of-Way Construction and Maintenance Equ...
+2330,Trailers
+2430,Tractors Full Tracked
+2530,Vehicular Brake Steering
+2630,Tires Solid and Cushion
+2830,Water Turbines and Water Wheels; and Componen...
+2930,Engine Cooling System Components Nonaircraft
+3030,Belting Drive Belts
+3130,Bearings Mounted
+3230,Tools and Attachments for Woodworking Machine...
+3530,Industrial Sewing Machines and Mobile Textile...
+3630,Clay and Concrete Products Industries Machine...
+3730,Dairy Poultry
+3830,Truck and Tractor Attachments
+3930,Warehouse Trucks and Tractors Self-Propelled
+4030,Fittings for Rope Cable
+4130,Refrigeration and Air Conditioning Components
+4230,Decontaminating and Impregnating Equipment
+4330,Centrifugals Separators
+4430,Industrial Furnaces Kilns
+4530,Fuel Burning Equipment Units
+4630,Sewage Treatment Equipment
+4730,Hose Pipe
+4930,Lubrication and Fuel Dispensing Equipment
+5130,Hand Tools Power Driven
+5330,Packing and Gasket Materials
+5430,Storage Tanks
+5530,Plywood and Veneer
+5630,Pipe and Conduit Nonmetallic
+5830,Intercommunication and Public Address Systems...
+5930,Switches
+6030,Fiber Optic Devices
+6130,Converters Electrical
+6230,Electric Portable and Hand Lighting Equipment
+6330,Railroad Signal and Warning Devices
+6530,Hospital Furniture Equipment
+6630,Chemical Analysis Instruments
+6730,Photographic Projection Equipment
+6830,Gases: Compressed and Liquefied
+6930,Operation Training Devices
+7030,Information Technology Software
+7230,Draperies Awnings
+7330,Kitchen Hand Tools and Utensils
+7430,Typewriters and Office Type Composing Machine...
+7530,Stationery and Record Forms
+7630,Newspapers and Periodicals
+7730,Phonographs Radios
+7830,Recreational and Gymnastic Equipment
+7930,Cleaning and Polishing Compounds and Preparat...
+8030,Preservative and Sealing Compounds
+8130,Reels and Spools
+8330,Leather
+8430,Footwear Men's
+8530,Personal Toiletry Articles
+8730,Seeds and Nursery Stock
+8930,Jams Jellies
+9130,Liquid Propellants and Fuels Petroleum Base
+9330,Plastics Fabricated Materials
+9430,Miscellaneous Crude Animal Products Inedible
+9530,Bars and Rods Nonferrous Base Metal
+9630,Additive Metal Materials
+9930,Memorials; Cemeterial and Mortuary Equipment ...
+3431,Electric Arc Welding Equipment
+4931,Fire Control Maintenance and Repair Shop Spec...
+5331,O-Ring
+5831,Intercommunication and Public Address Systems...
+6031,Integrated Optical Circuits
+3432,Electric Resistance Welding Equipment
+6032,Fiber Optic Light Sources and Photo Detectors
+6532,Hospital and Surgical Clothing and Related Sp...
+3433,Gas Welding Heat Cutting
+4933,Weapons Maintenance and Repair Shop Specializ...
+5133,Drill Bits Counterbores
+6033,Fiber Optic Photo Detectors
+6034,Fiber Optic Modulators/Demodulators
+1035,Guns over 300mm
+1135,Fuzing and Firing Devices Nuclear Ordnance
+1735,Space Vehicle Handling and Servicing Equipmen...
+1935,Barges and Lighters Special Purpose
+2835,Gas Turbines and Jet Engines; Non-Aircraft Pr...
+2935,Engine System Cooling Components Aircraft Pr...
+3635,Crystal and Glass Industries Machinery
+3835,Petroleum Production and Distribution Equipme...
+4235,Hazardous Material Spill Containment and Clea...
+4935,Guided Missile Maintenance Repair
+5335,Metal Screening
+5835,Sound Recording and Reproducing Equipment
+5935,Connectors Electrical
+6035,Fiber Optic Light Transfer and Image Transfer...
+6135,Batteries Nonrechargeable
+6635,Physical Properties Testing and Inspection
+7035,Information Technology Support Equipment
+7435,Office Information System Equipment
+7735,Parts and Accessories of Phonographs Radios
+8135,Packaging and Packing Bulk Materials
+8335,Shoe Findings and Soling Materials
+8435,Footwear Women's
+8935,Soups and Bouillons
+9135,Liquid Propellant Fuels and Oxidizers Chemic...
+9535,Plate Sheet
+1336,Guided Missile Warheads and Explosive Compone...
+3436,Welding Positioners and Manipulators
+5136,Taps Dies
+5836,Video Recording and Reproducing Equipment
+6636,Environmental Chambers and Related Equipment
+1337,Guided Missile and Space Vehicle Explosive Pr...
+1338,Guided Missile and Space Vehicle Inert Propul...
+3438,Miscellaneous Welding Equipment
+3439,Miscellaneous Welding Soldering
+1040,Chemical Weapons and Equipment
+1140,Nuclear Components
+1240,Optical Sighting and Ranging Equipment
+1340,Rockets Rocket Ammunition and Rocket Compone...
+1440,Launchers Guided Missile
+1540,Gliders
+1640,Aircraft Control Cable Products
+1740,Airfield Specialized Trucks and Trailers
+1840,Space Vehicle Launchers
+1940,Small Craft
+2040,Marine Hardware and Hull Items
+2240,Locomotive and Rail Car Accessories and Compo...
+2340,Motorcycles Motor Scooters
+2540,Vehicular Furniture and Accessories
+2640,Tire Rebuilding and Tire and Tube Repair Mate...
+2840,Gas Turbines and Jet Engines Aircraft
+2940,Engine Air and Oil Filters Strainers
+3040,Miscellaneous Power Transmission Equipment
+3540,Wrapping and Packaging Machinery
+3640,Tobacco Manufacturing Machinery
+3740,Pest Disease
+3940,Blocks Tackle
+4140,Fans Air Circulators
+4240,Safety and Rescue Equipment
+4440,Driers Dehydrators
+4540,Waste Disposal Equipment
+4940,Miscellaneous Maintenance and Repair Shop Spe...
+5140,Tool and Hardware Boxes
+5340,Hardware Commercial
+5440,Scaffolding Equipment and Concrete Forms
+5640,Wallboard Building Paper
+5840,Radar Equipment Except Airborne
+5940,Lugs Terminals
+6040,Fiber Optic Sensors
+6140,Batteries Rechargeable
+6240,Electric Lamps
+6340,Aircraft Alarm and Signal Systems
+6540,Ophthalmic Instruments Equipment
+6640,Laboratory Equipment and Supplies
+6740,Photographic Developing and Finishing Equipme...
+6840,Pest Control Agents and Disinfectants
+6940,Communication Training Devices
+7040,Punched Card Equipment
+7240,Household and Commercial Utility Containers
+7340,Cutlery and Flatware
+7540,Standard Forms
+7640,Maps Atlases
+7740,Phonograph Records
+8040,Adhesives
+8140,Ammunition and Nuclear Ordnance Boxes Packag...
+8340,Tents and Tarpaulins
+8440,Hosiery Handwear
+8540,Toiletry Paper Products
+8940,Special Dietary Foods and Food Specialty Prep...
+9140,Fuel Oils
+9340,Glass Fabricated Materials
+9440,Miscellaneous Crude Agricultural and Forestry...
+9540,Structural Shapes Nonferrous Base Metal
+9640,Iron and Steel Primary and Semifinished Produ...
+2541,Weapons Systems Specific Vehicular Accessorie...
+3441,Bending and Forming Machines
+5341,Brackets
+5841,Radar Equipment Airborne
+7641,Aeronautical Maps Charts and Geodetic Produc...
+3442,Hydraulic and Pneumatic Presses Power Driven
+5342,Hardware Weapon System
+7042,Mini and Micro Computer Control Devices
+7642,Hydrographic Maps Charts and Geodetic Produc...
+3443,Mechanical Presses Power Driven
+7643,Topographic Maps Charts and Geodetic Product...
+3444,Manual Presses
+7644,Digital Maps Charts and Geodetic Products
+1045,Launchers Torpedo and Depth Charge
+1145,Explosive and Pyrotechnic Components Nuclear...
+1345,Land Mines
+1945,Pontoons and Floating Docks
+2845,Rocket Engines and Components
+2945,Engine Air and Oil Filters Cleaners
+3445,Punching and Shearing Machines
+3645,Leather Tanning and Leather Working Industrie...
+5345,Disks and Stones Abrasive
+5445,Prefabricated Tower Structures
+5845,Underwater Sound Equipment
+5945,Relays and Solenoids
+6145,Wire and Cable Electrical
+6545,Replenishable Field Medical Sets Kits
+6645,Time Measuring Instruments
+7045,Information Technology Supplies
+8145,Specialized Shipping and Storage Containers
+8345,Flags and Pennants
+8445,Hosiery Handwear
+8945,Food Oils and Fats
+9545,Plate Sheet
+1346,Remote Munitions
+3446,Forging Machinery and Hammers
+3447,Wire and Metal Ribbon Forming Machines
+3448,Riveting Machines
+3449,Miscellaneous Secondary Metal Forming and Cut...
+1250,Fire Control Stabilizing Mechanisms
+1350,Underwater Mine and Components Inert
+1450,Guided Missile Handling and Servicing Equipme...
+1550,Unmanned Aircraft
+1650,Aircraft Hydraulic Vacuum
+1850,Space Vehicle Handling and Servicing Equipmen...
+1950,Floating Drydocks
+2050,Buoys
+2250,Track Material Railroad
+2350,Combat Assault
+2850,Gasoline Rotary Engines and Components
+2950,Turbosupercharger and Components
+3450,Machine Tools Portable
+3550,Vending and Coin Operated Machines
+3650,Chemical and Pharmaceutical Products Manufact...
+3750,Gardening Implements and Tools
+3950,Winches Hoists
+4150,Vortex Tubes and Other Related Cooling Tubes
+4250,Recycling and Reclamation Equipment
+5350,Abrasive Materials
+5450,Miscellaneous Prefabricated Structures
+5650,Roofing and Siding Materials
+5850,Visible and Invisible Light Communication Equ...
+5950,Coils and Transformers
+6050,Fiber Optic Passive Devices
+6150,Miscellaneous Electric Power and Distribution...
+6250,Ballasts Lampholders
+6350,Miscellaneous Alarm Signal
+6550,In Vitro Diagnostic Substances Reagents
+6650,Optical Instruments Test Equipment
+6750,Photographic Supplies
+6850,Miscellaneous Chemical Specialties
+7050,Information Technology Components
+7350,Tableware
+7450,Office Type Sound Recording and Reproducing M...
+7650,Drawings and Specifications
+8150,Freight Containers
+8450,Children's and Infants' Apparel and Accessori...
+8950,Condiments and Related Products
+9150,Oils and Greases: Cutting Lubricating
+9350,Refractories and Fire Surfacing Materials
+9450,Nonmetallic Scrap Except Textile
+9650,Nonferrous Base Metal Refinery and Intermedia...
+1351,Underwater Mines and Components Explosive
+1352,Underwater Mine Disposal Inert Devices
+1353,Underwater Mine Disposal Explosive Devices
+1055,Launchers Rocket and Pyrotechnic
+1355,Torpedos and Components Inert
+1555,Space Vehicles
+1955,Dredges
+2355,Combat Assault
+3455,Cutting Tools for Machine Tools
+3655,Gas Generating and Dispensing Systems Fixed ...
+5355,Knobs and Pointers
+5855,Night Vision Equipment Emitted and Reflected...
+5955,Oscillators and Piezoelectric Crystals
+6655,Geophysical Instruments
+8455,Badges and Insignia
+8955,Coffee Tea
+1356,Torpedos and Components Explosive
+3456,Cutting and Forming Tools for Secondary Metal...
+8457,Jewelry
+1260,Fire Control Designating and Indicating Equip...
+1360,Depth Charges and Components Inert
+1560,Airframe Structural Components
+1660,Aircraft Air Conditioning Heating
+1860,Space Survival Equipment
+2060,Commercial Fishing Equipment
+3460,Machine Tool accessories
+3660,Industrial Size Reduction Machinery
+3960,Freight Elevators
+4460,Air Purification Equipment
+4960,Space Vehicle Maintenance Repair
+5360,Coil Flat
+5660,Fencing Fences
+5860,Stimulated Coherent Radiation Devices Compon...
+5960,Electron Tubes and Associated Hardware
+6060,Fiber Optic Interconnectors
+6160,Miscellaneous Battery Retaining Fixtures Lin...
+6260,Nonelectrical Lighting Fixtures
+6660,Meteorological Instruments and Apparatus
+6760,Photographic Equipment and Accessories
+7360,Sets Kits
+7460,Visible Record Equipment
+7660,Sheet and Book Music
+8460,Luggage
+8960,Beverages Nonalcoholic
+9160,Miscellaneous Waxes Oils
+9660,Precious Metals Primary Forms
+1361,Depth Charges and Components Explosive
+3461,Accessories for Secondary Metalworking Machin...
+5961,Semiconductor Devices and Associated Hardware
+5962,Microcircuits Electronic
+5963,Electronic Modules
+1265,Fire Control Transmitting and Receiving Equip...
+1365,Military Chemical Agents
+3365,Historical FSC
+3465,Production Jigs Fixtures
+5365,Bushings Rings
+5865,Electronic Countermeasures Counter-Counterme...
+5965,Headsets Handsets
+6665,Hazard-Detecting Instruments and Apparatus
+8465,Individual Equipment
+8965,Beverages Alcoholic
+1367,Tactical Sets Kits
+1070,Nets and Booms Ordnance
+1270,Aircraft Gunnery Fire Control Components
+1370,Pyrotechnics
+1670,Parachutes; Aerial Pick Up Delivery
+3470,Machine Shop Sets Kits
+3670,Specialized Semiconductor Microcircuit
+3770,Saddlery Harness
+4470,Nuclear Reactors
+4970,Multiple Guided Weapons Specialized Maintena...
+5670,Building Components Prefabricated
+5970,Electrical Insulators and Insulating Material...
+6070,Fiber Optic Accessories and Supplies
+6670,Scales and Balances
+6770,Film Processed
+7670,Microfilm Processed
+8470,Armor Personal
+8970,Composite Food Packages
+9670,Iron and Steel Scrap
+1075,Degaussing and Mine Sweeping Equipment
+1375,Demolition Materials
+1675,Space Vehicle Components
+3375,Historical FSC
+5675,Nonwood Construction Lumber and Related Mater...
+5975,Electrical Hardware and Supplies
+6675,Drafting Surveying
+8475,Specialized Flight Clothing and Accessories
+8975,Tobacco Products
+1376,Bulk Explosives
+1377,Cartridge and Propellant Actuated Devices and...
+1677,Space Vehicle Remote Control Systems
+5977,Electrical Contact Brushes and Electrodes
+1080,Camouflage and Deception Equipment
+1280,Aircraft Bombing Fire Control Components
+1380,Military Biological Agents
+1680,Miscellaneous Aircraft Accessories and Compon...
+3680,Foundry Machinery Related Equipment and Supp...
+5180,Sets Kits
+5280,Sets Kits
+5680,Miscellaneous Construction Materials
+5980,Optoelectronic Devices and Associated Hardwar...
+6080,Fiber Optic Kits and Sets
+6680,Liquid and Gas Flow Liquid Level
+6780,Photographic Sets Kits
+9680,Nonferrous Scrap
+1285,Fire Control Radar Equipment except Airborne
+1385,Surface Use Explosive Ordnance Disposal Tools...
+3685,Specialized Metal Container Manufacturing Mac...
+5985,Antennas Waveguides
+6685,Pressure Temperature
+1386,Underwater Use Explosive Ordnance Disposal an...
+1287,Fire Control Sonar Equipment
+1090,Assemblies Interchangeable Between Weapons in...
+1190,Specialized Test and Handling Equipment Nucl...
+1290,Miscellaneous Fire Control Equipment
+1390,Fuzes and Primers
+1990,Miscellaneous Vessels
+2090,Miscellaneous Ship and Marine Equipment
+2190,Historical FSC
+2590,Miscellaneous Vehicular Components
+2990,Miscellaneous Engine Accessories Nonaircraft
+3590,Miscellaneous Service and Trade Equipment
+3690,Specialized Ammunition and Ordnance Machinery...
+3990,Miscellaneous Materials Handling Equipment
+5990,Synchros and Resolvers
+7290,Miscellaneous Household and Commercial Furnis...
+7490,Miscellaneous Office Machines
+7690,Miscellaneous Printed Matter
+9390,Miscellaneous Fabricated Nonmetallic Material...
+3693,Industrial Assembly Machines
+3694,Clean Work Stations Controlled Environment
+1095,Miscellaneous Weapons
+1195,Miscellaneous Nuclear Ordnance
+1395,Miscellaneous Ammunition
+2895,Miscellaneous Engines and Components
+2995,Miscellaneous Engine Accessories Aircraft
+3695,Miscellaneous Special Industry Machinery
+3895,Miscellaneous Construction Equipment
+5895,Miscellaneous Communication Equipment
+5995,Cable Cord
+6695,Combination and Miscellaneous Instruments
+7195,Miscellaneous Furniture and Fixtures
+5996,Amplifiers
+1398,Specialized Ammunition Handling and Servicing...
+5998,Electrical and Electronic Assemblies Boards
+5999,Miscellaneous Electrical and Electronic Compo...
+6099,Miscellaneous Fiber Optic Components
+9999,Miscellaneous Items
