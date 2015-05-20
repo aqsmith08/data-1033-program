@@ -1,31 +1,1 @@
-Agency_Authority,Agency_Jurisdiction
-Sheriff,County
-Trooper,State
-Police,Municipal
-DOJ,Federal
-Marshals,Federal
-FBI Agents,Federal
-Corrections,County
-Park,State
-Forest Service,Federal
-DHS,Federal
-Public Safety,Unknown
-Highway Patrol,State
-Drug Task Force,County
-"Colleges, Universities",Other
-Training Academies,State
-Dept of Interior,Federal
-Secret Service,Federal
-Airports,State
-District Attorney,Unknown
-Constable,County
-Dept of State,Federal
-Fish and WildLife,State
-Strange and Unique,Other
-Local Services,Municipal
-Postal,Federal
-HUD,Federal
-Other Federal Agencies (Non Security),Federal
-Other State Agencies (Non Security),State
-Other Country Agencies (Non Security),County
-ATF,Federal
+Agency_Authority,Agency_JurisdictionPublic Safety,StatePolice,MunicipalForest Service,StateATF,FederalDEA,FederalFBI,FederalMarshals,FederalFish and Wildlife,StateCourt and Corrections,CountyPark Service,State"Colleges, Universities",StateTraining Academies,CountyCounty,CountySheriff,CountyOther County Agencies (Non Security),CountyDHS,Federal"Harbors, Dams, Waterways, and Resevoirs",MunicipalHighway Patrol,StateOther State Agencies (Non Security),StateDrug Task Force,VariousConstable,CountyUnknown,UnknownIndian,TribalDept of Interior,FederalDOJ,FederalFish and WildLife,StateFire Dept,MunicipalDistrict Attorney,VariousOther Federal Agencies (Non Security),FederalSecret Service,FederalTrooper,StateNA,NADept of State,FederalLocal Services,MunicipalTreasury,FederalUnusual,UnusualCIA,Federal

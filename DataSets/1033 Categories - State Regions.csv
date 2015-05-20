@@ -1,55 +1,1 @@
-State_Abreviation,US_State_SubRegion
-AL,East South Central
-AK,Pacific
-AZ,Mountain
-AR,West South Central
-CA,Pacific
-CO,Mountain
-CT,New England
-DE,South Atlantic
-DC,South Atlantic
-FL,South Atlantic
-GA,South Atlantic
-GU,Caribbean
-HI,Pacific
-ID,Mountain
-IL,East North Central
-IN,East North Central
-IA,West North Central
-KS,West North Central
-KY,East South Central
-LA,West South Central
-ME,New England
-MD,South Atlantic
-MA,New England
-MI,East North Central
-MN,West North Central
-MS,East South Central
-MO,West North Central
-MT,Mountain
-NE,West North Central
-NV,Mountain
-NH,New England
-NJ,Middle Atlantic
-NM,Mountain
-NY,Middle Atlantic
-NC,South Atlantic
-ND,West North Central
-OH,East North Central
-OK,West South Central
-OR,Pacific
-PA,Middle Atlantic
-PR,Caribbean
-RI,New England
-SC,South Atlantic
-SD,West North Central
-TN,East South Central
-TX,West South Central
-UT,Mountain
-VT,New England
-VI,Caribbean
-VA,South Atlantic
-WA,Pacific
-WV,South Atlantic
-WI,East North Central
-WY,Mountain
+State,US_State_SubRegionAL,East South CentralAK,PacificAZ,MountainAR,West South CentralCA,PacificCO,MountainCT,New EnglandDE,South AtlanticDC,South AtlanticFL,South AtlanticGA,South AtlanticGU,CaribbeanHI,PacificID,MountainIL,East North CentralIN,East North CentralIA,West North CentralKS,West North CentralKY,East South CentralLA,West South CentralME,New EnglandMD,South AtlanticMA,New EnglandMI,East North CentralMN,West North CentralMS,East South CentralMO,West North CentralMT,MountainNE,West North CentralNV,MountainNH,New EnglandNJ,Middle AtlanticNM,MountainNY,Middle AtlanticNC,South AtlanticND,West North CentralOH,East North CentralOK,West South CentralOR,PacificPA,Middle AtlanticPR,CaribbeanRI,New EnglandSC,South AtlanticSD,West North CentralTN,East South CentralTX,West South CentralUT,MountainVT,New EnglandVI,CaribbeanVA,South AtlanticWA,PacificWV,South AtlanticWI,East North CentralWY,Mountain
