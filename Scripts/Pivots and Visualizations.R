@@ -25,4 +25,9 @@ dla %>%
 # ----------------------------------------------------
 # Q: What years saw the most transactions? What states were responsible?
 
+# ----------------------------------------------------
+# Q: Categories of Equipment: Show one category of equipment (guns) compared to all others
+
+
+
 
