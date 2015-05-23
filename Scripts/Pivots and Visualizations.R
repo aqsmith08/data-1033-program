@@ -4,6 +4,11 @@ library(ggplot2)
 library(ggvis)
 library(stringr)
 
+file <- "1033_DLA_data_as_of_march_2015.csv"
+
+# Data is imported as a data frame
+dla <- read.csv(file, stringsAsFactors=FALSE)
+
 # ----------------------------------------------------
 # Q: What are the states with most transactions (top 5)?
 ## Method 1: Each row is a transaction
