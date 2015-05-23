@@ -25,6 +25,10 @@ ggvis(top_5, ~State, ~n)
 # HELP: Format numbers on y axis? Other formatting....
 
 # Show 10 States with highest expenditures
+
+# HOW'D YOU CREATE THE Calculated.Cost VARIABLE? WE SHOULD ADD THAT BECAUSE I GET AN ERROR WHEN I
+# RUN THIS CODE
+
 dla %>%
   group_by(State )%>%
   summarise(Cost = sum(Calculated.Cost)) %>%
