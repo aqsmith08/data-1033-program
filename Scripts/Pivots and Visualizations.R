@@ -17,6 +17,10 @@ dla <- read.csv(file, stringsAsFactors=FALSE)
     top_n(5) %>% View()
 
 # Note: ggvis doesn't like being piped from calculations! Use new, assigned variable.
+
+# HOW'D YOU CREATE THE top_5 VARIABLE? WE SHOULD ADD THAT BECAUSE I GET AN ERROR WHEN I
+# RUN THIS CODE
+
 ggvis(top_5, ~State, ~n)
 # HELP: Format numbers on y axis? Other formatting....
 
