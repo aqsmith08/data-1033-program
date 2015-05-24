@@ -38,6 +38,16 @@ dla %>%
 # ----------------------------------------------------
 # Q: What years saw the most transactions? What states were responsible?
 
+# Create a year column
+dla$real_ship_date <- mdy_hms(dla$Ship.Date)
+dla$ship_year <- year(dla$real_ship_date)
+
+top_10_year_transactions <- dla %>%
+  count(ship_year, sort = TRUE) %>%
+  top_n(10)
+
+View(top_10_year_transactions)
+
 # ----------------------------------------------------
 # Q: Categories of Equipment: Show one category of equipment (guns) compared to all others
 
