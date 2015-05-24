@@ -49,6 +49,21 @@ top_10_year_transactions <- dla %>%
 
 View(top_10_year_transactions)
 
+# This code needs work. Shows the largest count of transactions by State and Year.
+group_by_state_and_year <- dla %>%
+  group_by(State, ship_year)
+
+count_transactions <- summarise(group_by_state_and_year, 
+                 count = n())
+
+# I can't figure out why this doesn't sort by count descending.
+# Also need to figure out how to limit this to the top 10 states instead of 
+# using the filter(count > 2500)
+count_transactions %>%
+  filter(count > 2500) %>%
+  arrange(desc(count)) %>%
+  View()
+
 # ----------------------------------------------------
 # Q: Categories of Equipment: Show one category of equipment (guns) compared to all others
 
