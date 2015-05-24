@@ -3,6 +3,7 @@ library(dplyrExtras)
 library(ggplot2)
 library(ggvis)
 library(stringr)
+library(lubridate)
 
 file <- "1033_DLA_data_as_of_march_2015.csv"
 
@@ -38,7 +39,7 @@ dla %>%
 # ----------------------------------------------------
 # Q: What years saw the most transactions? What states were responsible?
 
-# Create a year column
+# Create a year column using the lubridate package
 dla$real_ship_date <- mdy_hms(dla$Ship.Date)
 dla$ship_year <- year(dla$real_ship_date)
 
