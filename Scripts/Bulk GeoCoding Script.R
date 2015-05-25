@@ -6,7 +6,7 @@ library(dplyr)
 # get the input data; assumes dla is currently in workspace
 # Run "Import and DataCleaning" script, then...
 # break dla addresses into three subgroups...each less than 2,500
-# because Google will only bulk geocode 25000 at a time
+# because Google will only bulk geocode 2,500 at a time
 
 # Create Subgroup named addresses
 addresses <- distinct(select(dla, Station.Name))
