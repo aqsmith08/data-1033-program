@@ -53,8 +53,15 @@ geo2.addresses <- addresses[2451:4900,]
 geo2.lat_lon <- geo2
 geo2.complete <- bind_cols(geo2.addresses, geo2.lat_lon)
 
+# How many NAs?
+nrow(geo2.complete[geo2.complete$lon %in% NA, ])
+# Save NAs
+geo2.complete.nas <- geo2.complete[geo2.complete$lon %in% NA, ]
+
+
 # save to csv, in case R crashes
 write.csv(geo2.complete, "dla.geocoordinates.2of3.csv")
+write.csv(geo2.complete.nas, "dla.geocoordinates.2of3.nas.csv")
 
 
 
