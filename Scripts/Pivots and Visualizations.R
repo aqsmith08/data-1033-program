@@ -53,7 +53,6 @@ dla %>% group_by(Agency_Jurisdiction) %>% summarise(Cost = sum(Calculated.Cost))
     top_n(5)
 
 # Note: ggvis doesn't like being piped from calculations! Use new, assigned variable.
-<<<<<<< HEAD
 ggvis(top.5.transactions, ~State, ~n)
 =======
 

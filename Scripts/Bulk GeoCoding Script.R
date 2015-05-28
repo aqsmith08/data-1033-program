@@ -1,4 +1,7 @@
-#load up the ggmap library
+# This uses variables from Import and DataCleaning.R file! 
+# Run that before using this script
+
+# load up the ggmap library
 library(ggmap)
 library(dplyr)
 
@@ -26,10 +29,17 @@ geo1.addresses <- addresses[1:2450,]
 geo1.lat_lon <- geo1
 geo1.complete <- bind_cols(geo1.addresses, geo1.lat_lon)
 
+# NAs
+# How many NAs? 146
+nrow(geo1.complete[geo1.complete$lon %in% NA, ])
+# Save NAs
+geo1.complete.nas <- geo1.complete[geo1.complete$lon %in% NA, ]
+# Export as csv
+write.csv(geo1.complete.nas, "dla.geocoordinates.1of3.nas.csv")
+
+
 # save to csv, in case R crashes
 write.csv(geo1.complete, "dla.geocoordinates.1of3.csv")
-
-
 
 
 # Batch 2
@@ -59,10 +69,11 @@ nrow(geo2.complete[geo2.complete$lon %in% NA, ])
 geo2.complete.nas <- geo2.complete[geo2.complete$lon %in% NA, ]
 
 
-# save to csv, in case R crashes
+# save NA results to a csv, in case R crashes; 
+# We need to resolve these NAs if possible
+
 write.csv(geo2.complete, "dla.geocoordinates.2of3.csv")
 write.csv(geo2.complete.nas, "dla.geocoordinates.2of3.nas.csv")
-
 
 
 # Batch 3
