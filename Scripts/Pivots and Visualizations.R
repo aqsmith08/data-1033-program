@@ -47,37 +47,18 @@ dla %>% group_by(Agency_Jurisdiction) %>% summarise(Cost = sum(Calculated.Cost))
 
 # ----------------------------------------------------
 # Q: What are the states with most transactions (top 5)?
-## Method 1: Each row is a transaction
-  top.5.transactions <- dla %>% 
+# Method 1: Each row is a transaction
+# Assign top five transactions
+  
+top.5.transactions <- dla %>% 
     count(State, sort=TRUE) %>%
     top_n(5)
 
-# Note: ggvis doesn't like being piped from calculations! Use new, assigned variable.
-ggvis(top.5.transactions, ~State, ~n)
-=======
-
-# HOW'D YOU CREATE THE top_5 VARIABLE? WE SHOULD ADD THAT BECAUSE I GET AN ERROR WHEN I
-# RUN THIS CODE
-
-ggvis(top_5, ~State, ~n)
->>>>>>> upstream/master
-# HELP: Format numbers on y axis? Other formatting....
-
-# Show 10 States with highest expenditures
-
-# HOW'D YOU CREATE THE Calculated.Cost VARIABLE? WE SHOULD ADD THAT BECAUSE I GET AN ERROR WHEN I
-# RUN THIS CODE
-
-dla %>%
-  group_by(State )%>%
-  summarise(Cost = sum(Calculated.Cost)) %>%
-  top_n(10) %>%
-  arrange(desc(Cost))
 
 # ----------------------------------------------------
 # Q: What years saw the most transactions? What states were responsible?
 
-<<<<<<< HEAD
+
 
 =======
 # Create a year column using the lubridate package
@@ -128,4 +109,4 @@ aps<- dla %>%
 
   ggvis(aps, ~Year, ~Cost) %>% layer_bars()
 
-aps
+

@@ -12,7 +12,7 @@ library(dplyr)
 # because Google will only bulk geocode 2,500 at a time
 
 # Create Subgroup named addresses
-addresses <- distinct(select(dla, Station.Name))
+addresses <- distinct(select(dla, station.name))
 
 # alter the Station.Name to address, so Google will recognize it
 colnames(addresses)[1] <- "address"
@@ -48,7 +48,7 @@ write.csv(geo1.complete, "dla.geocoordinates.1of3.csv")
 # because Google will only bulk geocode 25000 at a time
 
 # Create Subgroup named addresses
-addresses <- distinct(select(dla, Station.Name))
+addresses <- distinct(select(dla, station.name))
 
 # alter the Station.Name to address, so Google will recognize it
 colnames(addresses)[1] <- "address"
@@ -82,18 +82,17 @@ write.csv(geo2.complete.nas, "dla.geocoordinates.2of3.nas.csv")
 # because Google will only bulk geocode 25000 at a time
 
 # Create Subgroup named addresses
-addresses <- distinct(select(dla, Station.Name))
+addresses <- distinct(select(dla, station.name))
 
 # alter the Station.Name to address, so Google will recognize it
 colnames(addresses)[1] <- "address"
 
-geo3 <- addresses[4901:6559]
-geo3 <- geocode(geo3$address)
-geo3 <- tbl_df(geo3)
+geo3 <- addresses[4901:6559,]
+geo3 <- geocode(geo3$address, output = "more")
 
 
 # bind address and lat/long together
-geo3.addresses <- addresses[2451:4900,]
+geo3.addresses <- addresses[4901:6559,]
 geo3.lat_lon <- geo3
 geo3.complete <- bind_cols(geo3.addresses, geo3.lat_lon)
 
