@@ -18,8 +18,8 @@ dla.orig <- read.csv("~/Documents/R Programming/data-1033-program/DataSets/1033_
 # Rename and convert to dataframe
 dla <- tbl_df(dla.orig)
 
-# Rename "Station.Name..LEA."
-colnames(dla)[2]<- "Station.Name"
+# Rename "station.name..LEA."
+colnames(dla)[2]<- "station.name"
 
 ## Clean Up Acquisition.Value data ##
   # Remove Commas and dollar signs from Cost Acquistion
@@ -111,12 +111,8 @@ dla$FSGC <- as.integer(dla$FSGC)
 FSGC.codes <- read.csv("~/Documents/R Programming/data-1033-program/DataSets/1033 Categories - FSGC Codes.csv", stringsAsFactors=FALSE)
 FSGC.codes <- tbl_df(FSGC.codes)
 
-# Reassign to y
-y <- FSGC.codes 
-str(y)
-
 #Join the the tables
-dla<- left_join(dla,y)
+dla<- left_join(dla,FSGC.codes)
 
 #------- Import CTM's FSGC Metadata: FSG Categories ------#
 
@@ -138,7 +134,7 @@ View(dla)
 
 # Purpose: Prepare main dataset for import
 # Create Agency Authority Column
-dla$Agency_Authority <- NA
+dla$agency.authority <- NA
 colnames(dla)
 
 # Assign Metadata Based on Agency Name
@@ -146,171 +142,171 @@ colnames(dla)
 # Tag "Agency Authority" with my own categories, based on "Agency Name"
 # I have no idea how to organize this better
 
-dla$Agency_Authority[grepl(" pd", dla$Station.Name, ignore.case=TRUE)] "Police"
-dla$Agency_Authority[grepl("police", dla$Station.Name, ignore.case=TRUE)] <- "Police" 
-dla$Agency_Authority[grepl("inv unit", dla$Station.Name, ignore.case=TRUE)] <- "Police" 
-dla$Agency_Authority[grepl("METRO PD", dla$Station.Name, ignore.case=TRUE)] <- "Police" 
-dla$Agency_Authority[grepl("DEPT OF LAW ENF", dla$Station.Name, ignore.case=TRUE)] <- "Police" 
-dla$Agency_Authority[grepl("municip", dla$Station.Name, ignore.case=TRUE)] <- "Police" 
-dla$Agency_Authority[grepl("WASHINGTON TWP PD TOLEDO", dla$Station.Name, ignore.case=TRUE)] <- "Police"
-dla$Agency_Authority[grepl("HEIGHTS PD", dla$Station.Name, ignore.case=TRUE)] <- "Police"
-dla$Agency_Authority[grepl("TOWNSHIP PD", dla$Station.Name, ignore.case=TRUE)] <- "Police"
-dla$Agency_Authority[grepl("GOBIERNO DE QUEBRADILLAS/POLICIA", dla$Station.Name, ignore.case=TRUE)] <- "Police"
+dla$agency.authority[grepl(" pd", dla$station.name, ignore.case=TRUE)] "Police"
+dla$agency.authority[grepl("police", dla$station.name, ignore.case=TRUE)] <- "Police" 
+dla$agency.authority[grepl("inv unit", dla$station.name, ignore.case=TRUE)] <- "Police" 
+dla$agency.authority[grepl("METRO PD", dla$station.name, ignore.case=TRUE)] <- "Police" 
+dla$agency.authority[grepl("DEPT OF LAW ENF", dla$station.name, ignore.case=TRUE)] <- "Police" 
+dla$agency.authority[grepl("municip", dla$station.name, ignore.case=TRUE)] <- "Police" 
+dla$agency.authority[grepl("WASHINGTON TWP PD TOLEDO", dla$station.name, ignore.case=TRUE)] <- "Police"
+dla$agency.authority[grepl("HEIGHTS PD", dla$station.name, ignore.case=TRUE)] <- "Police"
+dla$agency.authority[grepl("TOWNSHIP PD", dla$station.name, ignore.case=TRUE)] <- "Police"
+dla$agency.authority[grepl("GOBIERNO DE QUEBRADILLAS/POLICIA", dla$station.name, ignore.case=TRUE)] <- "Police"
 
 
-dla$Agency_Authority[grepl("trooper", dla$Station.Name, ignore.case=TRUE)] <- "Trooper" 
-dla$Agency_Authority[grepl("mounted", dla$Station.Name, ignore.case=TRUE)] <- "Trooper" 
+dla$agency.authority[grepl("trooper", dla$station.name, ignore.case=TRUE)] <- "Trooper" 
+dla$agency.authority[grepl("mounted", dla$station.name, ignore.case=TRUE)] <- "Trooper" 
 
-dla$Agency_Authority[grepl("sheriff", dla$Station.Name, ignore.case=TRUE)] <- "Sheriff" 
-dla$Agency_Authority[grepl("SHERRIFF", dla$Station.Name, ignore.case=TRUE)] <- "Sheriff" 
-dla$Agency_Authority[grepl("SHERRIF", dla$Station.Name, ignore.case=TRUE)] <- "Sheriff" 
+dla$agency.authority[grepl("sheriff", dla$station.name, ignore.case=TRUE)] <- "Sheriff" 
+dla$agency.authority[grepl("SHERRIFF", dla$station.name, ignore.case=TRUE)] <- "Sheriff" 
+dla$agency.authority[grepl("SHERRIF", dla$station.name, ignore.case=TRUE)] <- "Sheriff" 
 
-dla$Agency_Authority[grepl("constable", dla$Station.Name, ignore.case=TRUE)] <- "Constable"
+dla$agency.authority[grepl("constable", dla$station.name, ignore.case=TRUE)] <- "Constable"
 
-dla$Agency_Authority[grepl("marshal", dla$Station.Name, ignore.case=TRUE)] <- "Marshals" 
+dla$agency.authority[grepl("marshal", dla$station.name, ignore.case=TRUE)] <- "Marshals" 
 
-dla$Agency_Authority[grepl("highway", dla$Station.Name, ignore.case=TRUE)] <- "Highway Patrol"
-dla$Agency_Authority[grepl("CHIP", dla$Station.Name, ignore.case=FALSE)] <- "Highway Patrol"
-dla$Agency_Authority[grepl("STATE PATROL", dla$Station.Name, ignore.case=FALSE)] <- "Highway Patrol"
+dla$agency.authority[grepl("highway", dla$station.name, ignore.case=TRUE)] <- "Highway Patrol"
+dla$agency.authority[grepl("CHIP", dla$station.name, ignore.case=FALSE)] <- "Highway Patrol"
+dla$agency.authority[grepl("STATE PATROL", dla$station.name, ignore.case=FALSE)] <- "Highway Patrol"
 
-dla$Agency_Authority[grepl("safety", dla$Station.Name, ignore.case=TRUE)] <- "Public Safety"
-dla$Agency_Authority[grepl("DEPT OF PUB SAF", dla$Station.Name, ignore.case=TRUE)] <- "Public Safety"
-dla$Agency_Authority[grepl("DEPT OF PUBLIC SAFETY", dla$Station.Name, ignore.case=TRUE)] <- "Public Safety"
+dla$agency.authority[grepl("safety", dla$station.name, ignore.case=TRUE)] <- "Public Safety"
+dla$agency.authority[grepl("DEPT OF PUB SAF", dla$station.name, ignore.case=TRUE)] <- "Public Safety"
+dla$agency.authority[grepl("DEPT OF PUBLIC SAFETY", dla$station.name, ignore.case=TRUE)] <- "Public Safety"
 View(dla)
 
-dla$Agency_Authority[grepl("drug", dla$Station.Name, ignore.case=TRUE)] <- "Drug Task Force"
-dla$Agency_Authority[grepl("narcotics", dla$Station.Name, ignore.case=TRUE)] <- "Drug Task Force"
-dla$Agency_Authority[grepl("dtf", dla$Station.Name, ignore.case=TRUE)] <- "Drug Task Force"
-dla$Agency_Authority[grepl("ntf", dla$Station.Name, ignore.case=TRUE)] <- "Drug Task Force"
+dla$agency.authority[grepl("drug", dla$station.name, ignore.case=TRUE)] <- "Drug Task Force"
+dla$agency.authority[grepl("narcotics", dla$station.name, ignore.case=TRUE)] <- "Drug Task Force"
+dla$agency.authority[grepl("dtf", dla$station.name, ignore.case=TRUE)] <- "Drug Task Force"
+dla$agency.authority[grepl("ntf", dla$station.name, ignore.case=TRUE)] <- "Drug Task Force"
 
-dla$Agency_Authority[grepl("correction", dla$Station.Name, ignore.case=TRUE)] <- "Court and Corrections"
-dla$Agency_Authority[grepl("prison", dla$Station.Name, ignore.case=TRUE)] <- "Court and Corrections"
-dla$Agency_Authority[grepl("detention", dla$Station.Name, ignore.case=TRUE)] <- "Court and Corrections"
-dla$Agency_Authority[grepl("PENITENTIARY", dla$Station.Name, ignore.case=TRUE)] <- "Court and Corrections"
-dla$Agency_Authority[grepl("probation", dla$Station.Name, ignore.case=TRUE)] <- "Court and Corrections"
-dla$Agency_Authority[grepl("Jail", dla$Station.Name, ignore.case=TRUE)] <- "Court and Corrections"
-dla$Agency_Authority[grepl("VT CRIMINAL JUSTICE TRN COUN", dla$Station.Name, ignore.case=TRUE)] <- "Court and Corrections"
-dla$Agency_Authority[grepl("Court", dla$Station.Name, ignore.case=TRUE)] <- "Court and Corrections"
+dla$agency.authority[grepl("correction", dla$station.name, ignore.case=TRUE)] <- "Court and Corrections"
+dla$agency.authority[grepl("prison", dla$station.name, ignore.case=TRUE)] <- "Court and Corrections"
+dla$agency.authority[grepl("detention", dla$station.name, ignore.case=TRUE)] <- "Court and Corrections"
+dla$agency.authority[grepl("PENITENTIARY", dla$station.name, ignore.case=TRUE)] <- "Court and Corrections"
+dla$agency.authority[grepl("probation", dla$station.name, ignore.case=TRUE)] <- "Court and Corrections"
+dla$agency.authority[grepl("Jail", dla$station.name, ignore.case=TRUE)] <- "Court and Corrections"
+dla$agency.authority[grepl("VT CRIMINAL JUSTICE TRN COUN", dla$station.name, ignore.case=TRUE)] <- "Court and Corrections"
+dla$agency.authority[grepl("Court", dla$station.name, ignore.case=TRUE)] <- "Court and Corrections"
 
-dla$Agency_Authority[grepl("COUNTY DA", dla$Station.Name, ignore.case=TRUE)] <- "District Attorney"
-#dla$Agency_Authority[grepl("DA", dla$Station.Name, ignore.case=TRUE)] <- "District Attorney"
-dla$Agency_Authority[grepl("ATTORNEY", dla$Station.Name, ignore.case=TRUE)] <- "District Attorney"
-dla$Agency_Authority[grepl("CO LAW ENF", dla$Station.Name, ignore.case=TRUE)] <- "District Attorney"
-dla$Agency_Authority[grepl("ATTY GEN", dla$Station.Name, ignore.case=TRUE)] <- "District Attorney"
-dla$Agency_Authority[grepl("PROSECUTOR", dla$Station.Name, ignore.case=TRUE)] <- "District Attorney"
-dla$Agency_Authority[grepl("DA'S OFFICE", dla$Station.Name, ignore.case=TRUE)] <- "District Attorney"
-dla$Agency_Authority[grepl("LOS ANGELES DA", dla$Station.Name, ignore.case=TRUE)] <- "District Attorney"
-dla$Agency_Authority[grepl("TN 9TH JUDICIAL DISTRICT DA", dla$Station.Name, ignore.case=TRUE)] <- "District Attorney"
-
-
-
-dla$Agency_Authority[grepl("METRO", dla$Station.Name, ignore.case=TRUE)] <- "Local Services"
-dla$Agency_Authority[grepl("YOUTH AFFAIRS", dla$Station.Name, ignore.case=TRUE)] <- "Local Services"
-
-dla$Agency_Authority[grepl("Arson", dla$Station.Name, ignore.case=TRUE)] <- "Fire Dept"
-dla$Agency_Authority[grepl("Fire", dla$Station.Name, ignore.case=TRUE)] <- "Fire Dept"
-
-dla$Agency_Authority[grepl("airport", dla$Station.Name, ignore.case=TRUE)] <- "Airports"
+dla$agency.authority[grepl("COUNTY DA", dla$station.name, ignore.case=TRUE)] <- "District Attorney"
+#dla$agency.authority[grepl("DA", dla$station.name, ignore.case=TRUE)] <- "District Attorney"
+dla$agency.authority[grepl("ATTORNEY", dla$station.name, ignore.case=TRUE)] <- "District Attorney"
+dla$agency.authority[grepl("CO LAW ENF", dla$station.name, ignore.case=TRUE)] <- "District Attorney"
+dla$agency.authority[grepl("ATTY GEN", dla$station.name, ignore.case=TRUE)] <- "District Attorney"
+dla$agency.authority[grepl("PROSECUTOR", dla$station.name, ignore.case=TRUE)] <- "District Attorney"
+dla$agency.authority[grepl("DA'S OFFICE", dla$station.name, ignore.case=TRUE)] <- "District Attorney"
+dla$agency.authority[grepl("LOS ANGELES DA", dla$station.name, ignore.case=TRUE)] <- "District Attorney"
+dla$agency.authority[grepl("TN 9TH JUDICIAL DISTRICT DA", dla$station.name, ignore.case=TRUE)] <- "District Attorney"
 
 
-dla$Agency_Authority[grepl("county", dla$Station.Name, ignore.case=TRUE)] <- "County"
-dla$Agency_Authority[grepl("coroner", dla$Station.Name, ignore.case=TRUE)] <- "Other County Agencies (Non Security)"
-dla$Agency_Authority[grepl("animal", dla$Station.Name, ignore.case=TRUE)] <- "Other County Agencies (Non Security)"
-dla$Agency_Authority[grepl("PORT DIST HAR", dla$Station.Name, ignore.case=TRUE)] <- "Other County Agencies (Non Security)"
 
-dla$Agency_Authority[grepl("agriculture", dla$Station.Name, ignore.case=TRUE)] <- "Other State Agencies (Non Security)"
-dla$Agency_Authority[grepl("Sergeant", dla$Station.Name, ignore.case=TRUE)] <- "Other State Agencies (Non Security)"
-dla$Agency_Authority[grepl("RIVER AND BAY", dla$Station.Name, ignore.case=TRUE)] <- "Other State Agencies (Non Security)"
-dla$Agency_Authority[grepl("MOTOR VEHICLE", dla$Station.Name, ignore.case=TRUE)] <- "Other State Agencies (Non Security)"
-dla$Agency_Authority[grepl("IL DEPT OF CENTRAL MANAGEMENT", dla$Station.Name, ignore.case=TRUE)] <- "Other State Agencies (Non Security)"
-dla$Agency_Authority[grepl("pardons", dla$Station.Name, ignore.case=TRUE)] <- "Other State Agencies (Non Security)"
-dla$Agency_Authority[grepl("tobacco", dla$Station.Name, ignore.case=TRUE)] <- "Other State Agencies (Non Security)"
+dla$agency.authority[grepl("METRO", dla$station.name, ignore.case=TRUE)] <- "Local Services"
+dla$agency.authority[grepl("YOUTH AFFAIRS", dla$station.name, ignore.case=TRUE)] <- "Local Services"
 
-dla$Agency_Authority[grepl("DEPT OF VA", dla$Station.Name, ignore.case=TRUE)] <- "Other Federal Agencies (Non Security)"
-dla$Agency_Authority[grepl("US EPA", dla$Station.Name, ignore.case=TRUE)] <- "Other Federal Agencies (Non Security)"
-dla$Agency_Authority[grepl("Postal", dla$Station.Name, ignore.case=TRUE)] <- "Other Federal Agencies (Non Security)"
-dla$Agency_Authority[grepl("customs", dla$Station.Name, ignore.case=TRUE)] <- "Other Federal Agencies (Non Security)"
-dla$Agency_Authority[grepl("usps", dla$Station.Name, ignore.case=TRUE)] <- "Other Federal Agencies (Non Security)"
-dla$Agency_Authority[grepl("US DEPT AGRIC", dla$Station.Name, ignore.case=TRUE)] <- "Other Federal Agencies (Non Security)"
-dla$Agency_Authority[grepl("DEPT OF HUD", dla$Station.Name, ignore.case=TRUE)] <- "Other Federal Agencies (Non Security)"
-dla$Agency_Authority[grepl("IRS EL PASO", dla$Station.Name, ignore.case=TRUE)] <- "Other Federal Agencies (Non Security)"
+dla$agency.authority[grepl("Arson", dla$station.name, ignore.case=TRUE)] <- "Fire Dept"
+dla$agency.authority[grepl("Fire", dla$station.name, ignore.case=TRUE)] <- "Fire Dept"
+
+dla$agency.authority[grepl("airport", dla$station.name, ignore.case=TRUE)] <- "Airports"
 
 
-dla$Agency_Authority[grepl("aapc", dla$Station.Name, ignore.case=TRUE)] <- "Unknown"
-dla$Agency_Authority[grepl("GLEN CANYON", dla$Station.Name, ignore.case=TRUE)] <- "Unknown"
+dla$agency.authority[grepl("county", dla$station.name, ignore.case=TRUE)] <- "County"
+dla$agency.authority[grepl("coroner", dla$station.name, ignore.case=TRUE)] <- "Other County Agencies (Non Security)"
+dla$agency.authority[grepl("animal", dla$station.name, ignore.case=TRUE)] <- "Other County Agencies (Non Security)"
+dla$agency.authority[grepl("PORT DIST HAR", dla$station.name, ignore.case=TRUE)] <- "Other County Agencies (Non Security)"
+
+dla$agency.authority[grepl("agriculture", dla$station.name, ignore.case=TRUE)] <- "Other State Agencies (Non Security)"
+dla$agency.authority[grepl("Sergeant", dla$station.name, ignore.case=TRUE)] <- "Other State Agencies (Non Security)"
+dla$agency.authority[grepl("RIVER AND BAY", dla$station.name, ignore.case=TRUE)] <- "Other State Agencies (Non Security)"
+dla$agency.authority[grepl("MOTOR VEHICLE", dla$station.name, ignore.case=TRUE)] <- "Other State Agencies (Non Security)"
+dla$agency.authority[grepl("IL DEPT OF CENTRAL MANAGEMENT", dla$station.name, ignore.case=TRUE)] <- "Other State Agencies (Non Security)"
+dla$agency.authority[grepl("pardons", dla$station.name, ignore.case=TRUE)] <- "Other State Agencies (Non Security)"
+dla$agency.authority[grepl("tobacco", dla$station.name, ignore.case=TRUE)] <- "Other State Agencies (Non Security)"
+
+dla$agency.authority[grepl("DEPT OF VA", dla$station.name, ignore.case=TRUE)] <- "Other Federal Agencies (Non Security)"
+dla$agency.authority[grepl("US EPA", dla$station.name, ignore.case=TRUE)] <- "Other Federal Agencies (Non Security)"
+dla$agency.authority[grepl("Postal", dla$station.name, ignore.case=TRUE)] <- "Other Federal Agencies (Non Security)"
+dla$agency.authority[grepl("customs", dla$station.name, ignore.case=TRUE)] <- "Other Federal Agencies (Non Security)"
+dla$agency.authority[grepl("usps", dla$station.name, ignore.case=TRUE)] <- "Other Federal Agencies (Non Security)"
+dla$agency.authority[grepl("US DEPT AGRIC", dla$station.name, ignore.case=TRUE)] <- "Other Federal Agencies (Non Security)"
+dla$agency.authority[grepl("DEPT OF HUD", dla$station.name, ignore.case=TRUE)] <- "Other Federal Agencies (Non Security)"
+dla$agency.authority[grepl("IRS EL PASO", dla$station.name, ignore.case=TRUE)] <- "Other Federal Agencies (Non Security)"
 
 
-dla$Agency_Authority[grepl("doj", dla$Station.Name, ignore.case=TRUE)] <- "DOJ"
-dla$Agency_Authority[grepl("DEPARTMENT OF JUSTICE", dla$Station.Name, ignore.case=TRUE)] <- "DOJ"
-dla$Agency_Authority[grepl("DEA", dla$Station.Name, ignore.case=TRUE)] <- "DEA"
-dla$Agency_Authority[grepl("fbi", dla$Station.Name, ignore.case=TRUE)] <- "FBI"
-dla$Agency_Authority[grepl("DHS", dla$Station.Name, ignore.case=TRUE)] <- "DHS"
-dla$Agency_Authority[grepl("atf", dla$Station.Name, ignore.case=TRUE)] <- "ATF"
-dla$Agency_Authority[grepl("US ICE", dla$Station.Name, ignore.case=TRUE)] <- "DHS"
-dla$Agency_Authority[grepl("Border", dla$Station.Name, ignore.case=TRUE)] <- "DHS"
-dla$Agency_Authority[grepl("US DOI", dla$Station.Name, ignore.case=TRUE)] <- "Dept of Interior"
-dla$Agency_Authority[grepl("doi bur", dla$Station.Name, ignore.case = TRUE)] <- "Dept of Interior"
-dla$Agency_Authority[grepl("DEPT OF STATE", dla$Station.Name, ignore.case = TRUE)] <- "Dept of State"
-dla$Agency_Authority[grepl("immigration", dla$Station.Name, ignore.case=TRUE)] <- "DHS"
-dla$Agency_Authority[grepl("HOMELAND SEC", dla$Station.Name, ignore.case=TRUE)] <- "DHS"
-dla$Agency_Authority[grepl("DEPT OF TRANSPORTATION", dla$Station.Name, ignore.case=TRUE)] <- "DOT"
-dla$Agency_Authority[grepl("US CIA", dla$Station.Name, ignore.case=TRUE)] <- "CIA"
-dla$Agency_Authority[grepl("treasury", dla$Station.Name, ignore.case=TRUE)] <- "Treasury"
+dla$agency.authority[grepl("aapc", dla$station.name, ignore.case=TRUE)] <- "Unknown"
+dla$agency.authority[grepl("GLEN CANYON", dla$station.name, ignore.case=TRUE)] <- "Unknown"
 
 
-dla$Agency_Authority[grepl("park", dla$Station.Name, ignore.case=TRUE)] <- "Park Service"
-dla$Agency_Authority[grepl("ranger", dla$Station.Name, ignore.case=TRUE)] <- "Park Service"
-dla$Agency_Authority[grepl("marine", dla$Station.Name, ignore.case=TRUE)] <- "Fish and Wildlife"
-dla$Agency_Authority[grepl("conservation", dla$Station.Name, ignore.case=TRUE)] <- "Fish and Wildlife"
-dla$Agency_Authority[grepl("fish", dla$Station.Name, ignore.case=TRUE)] <- "Fish and Wildlife"
-dla$Agency_Authority[grepl("Forest", dla$Station.Name, ignore.case=TRUE)] <- "Forest Service"
-dla$Agency_Authority[grepl("CONSERV AUTH", dla$Station.Name, ignore.case=TRUE)] <- "Fish and WildLife"
-dla$Agency_Authority[grepl("wildlife", dla$Station.Name, ignore.case=TRUE)] <- "Fish and WildLife"
-dla$Agency_Authority[grepl("PR DEPT OF NATURAL & ENV RESOURCES", dla$Station.Name, ignore.case=TRUE)] <- "Fish and WildLife"
-dla$Agency_Authority[grepl("National", dla$Station.Name, ignore.case=TRUE)] <- "Forest Service"
-dla$Agency_Authority[grepl("GA DNR SOCIAL CIRCLE", dla$Station.Name, ignore.case=TRUE)] <- "Fish and WildLife"
-dla$Agency_Authority[grepl("DNR", dla$Station.Name, ignore.case=TRUE)] <- "Fish and Wildlife"
-dla$Agency_Authority[grepl("NATURAL RESOURCES", dla$Station.Name, ignore.case=TRUE)] <- "Fish and Wildlife"
+dla$agency.authority[grepl("doj", dla$station.name, ignore.case=TRUE)] <- "DOJ"
+dla$agency.authority[grepl("DEPARTMENT OF JUSTICE", dla$station.name, ignore.case=TRUE)] <- "DOJ"
+dla$agency.authority[grepl("DEA", dla$station.name, ignore.case=TRUE)] <- "DEA"
+dla$agency.authority[grepl("fbi", dla$station.name, ignore.case=TRUE)] <- "FBI"
+dla$agency.authority[grepl("DHS", dla$station.name, ignore.case=TRUE)] <- "DHS"
+dla$agency.authority[grepl("atf", dla$station.name, ignore.case=TRUE)] <- "ATF"
+dla$agency.authority[grepl("US ICE", dla$station.name, ignore.case=TRUE)] <- "DHS"
+dla$agency.authority[grepl("Border", dla$station.name, ignore.case=TRUE)] <- "DHS"
+dla$agency.authority[grepl("US DOI", dla$station.name, ignore.case=TRUE)] <- "Dept of Interior"
+dla$agency.authority[grepl("doi bur", dla$station.name, ignore.case = TRUE)] <- "Dept of Interior"
+dla$agency.authority[grepl("DEPT OF STATE", dla$station.name, ignore.case = TRUE)] <- "Dept of State"
+dla$agency.authority[grepl("immigration", dla$station.name, ignore.case=TRUE)] <- "DHS"
+dla$agency.authority[grepl("HOMELAND SEC", dla$station.name, ignore.case=TRUE)] <- "DHS"
+dla$agency.authority[grepl("DEPT OF TRANSPORTATION", dla$station.name, ignore.case=TRUE)] <- "DOT"
+dla$agency.authority[grepl("US CIA", dla$station.name, ignore.case=TRUE)] <- "CIA"
+dla$agency.authority[grepl("treasury", dla$station.name, ignore.case=TRUE)] <- "Treasury"
 
 
-dla$Agency_Authority[grepl("college", dla$Station.Name, ignore.case=TRUE)] <- "Colleges, Universities"
-dla$Agency_Authority[grepl("university", dla$Station.Name, ignore.case=TRUE)] <- "Colleges, Universities"
-dla$Agency_Authority[grepl("UNIV", dla$Station.Name, ignore.case=TRUE)] <- "Colleges, Universities"
-dla$Agency_Authority[grepl("SCH DIST PD", dla$Station.Name, ignore.case=TRUE)] <- "Colleges, Universities"
-
-dla$Agency_Authority[grepl("academy", dla$Station.Name, ignore.case=TRUE)] <- "Training Academies"
-dla$Agency_Authority[grepl("TNG CTR", dla$Station.Name, ignore.case=TRUE)] <- "Training Academies"
-dla$Agency_Authority[grepl("TNG CENTER", dla$Station.Name, ignore.case=TRUE)] <- "Training Academies"
-dla$Agency_Authority[grepl("TRNG CTR", dla$Station.Name, ignore.case=TRUE)] <- "Training Academies"
-
-dla$Agency_Authority[grepl("tribal", dla$Station.Name, ignore.case=TRUE)] <- "Indian"
-dla$Agency_Authority[grepl("YAKAMA NATION", dla$Station.Name, ignore.case=TRUE)] <- "Indian"
-dla$Agency_Authority[grepl("indian", dla$Station.Name, ignore.case=TRUE)] <- "Indian"
-dla$Agency_Authority[grepl("CITIZENS POTAWATOMI NATION PD", dla$Station.Name, ignore.case=TRUE)] <- "Indian"
-
-dla$Agency_Authority[grepl("secret service", dla$Station.Name, ignore.case=TRUE)] <- "Secret Service"
-dla$Agency_Authority[grepl("BUREAU OF INVESTIGATIO", dla$Station.Name, ignore.case=TRUE)] <- "Other State Agencies (Non Security)"
-dla$Agency_Authority[grepl("EMERGENCY MGMT", dla$Station.Name, ignore.case=TRUE)] <- "Other State Agencies (Non Security)"
-dla$Agency_Authority[grepl("OF REVENUE", dla$Station.Name, ignore.case=TRUE)] <- "Other State Agencies (Non Security)"
-dla$Agency_Authority[grepl("livestock", dla$Station.Name, ignore.case=TRUE)] <- "Other State Agencies (Non Security)"
-dla$Agency_Authority[grepl("DEPT OF HEALTH AND HUMAN", dla$Station.Name, ignore.case=TRUE)] <- "Other State Agencies (Non Security)"
-dla$Agency_Authority[grepl("DEPT OF MGMT SVC", dla$Station.Name, ignore.case=TRUE)] <- "Other State Agencies (Non Security)"
+dla$agency.authority[grepl("park", dla$station.name, ignore.case=TRUE)] <- "Park Service"
+dla$agency.authority[grepl("ranger", dla$station.name, ignore.case=TRUE)] <- "Park Service"
+dla$agency.authority[grepl("marine", dla$station.name, ignore.case=TRUE)] <- "Fish and Wildlife"
+dla$agency.authority[grepl("conservation", dla$station.name, ignore.case=TRUE)] <- "Fish and Wildlife"
+dla$agency.authority[grepl("fish", dla$station.name, ignore.case=TRUE)] <- "Fish and Wildlife"
+dla$agency.authority[grepl("Forest", dla$station.name, ignore.case=TRUE)] <- "Forest Service"
+dla$agency.authority[grepl("CONSERV AUTH", dla$station.name, ignore.case=TRUE)] <- "Fish and WildLife"
+dla$agency.authority[grepl("wildlife", dla$station.name, ignore.case=TRUE)] <- "Fish and WildLife"
+dla$agency.authority[grepl("PR DEPT OF NATURAL & ENV RESOURCES", dla$station.name, ignore.case=TRUE)] <- "Fish and WildLife"
+dla$agency.authority[grepl("National", dla$station.name, ignore.case=TRUE)] <- "Forest Service"
+dla$agency.authority[grepl("GA DNR SOCIAL CIRCLE", dla$station.name, ignore.case=TRUE)] <- "Fish and WildLife"
+dla$agency.authority[grepl("DNR", dla$station.name, ignore.case=TRUE)] <- "Fish and Wildlife"
+dla$agency.authority[grepl("NATURAL RESOURCES", dla$station.name, ignore.case=TRUE)] <- "Fish and Wildlife"
 
 
-dla$Agency_Authority[grepl("RAILWAY", dla$Station.Name, ignore.case=TRUE)] <- "Unusual"
-dla$Agency_Authority[grepl("LIVE STOCK BOARD", dla$Station.Name, ignore.case=TRUE)] <- "Unusual"
-dla$Agency_Authority[grepl("SKI VALLEY", dla$Station.Name, ignore.case=TRUE)] <- "Unusual"
-dla$Agency_Authority[grepl("HOSPITAL PD", dla$Station.Name, ignore.case=TRUE)] <- "Unusual"
+dla$agency.authority[grepl("college", dla$station.name, ignore.case=TRUE)] <- "Colleges, Universities"
+dla$agency.authority[grepl("university", dla$station.name, ignore.case=TRUE)] <- "Colleges, Universities"
+dla$agency.authority[grepl("UNIV", dla$station.name, ignore.case=TRUE)] <- "Colleges, Universities"
+dla$agency.authority[grepl("SCH DIST PD", dla$station.name, ignore.case=TRUE)] <- "Colleges, Universities"
 
-dla$Agency_Authority[grepl("GAMING AGENCY", dla$Station.Name, ignore.case=TRUE)] <- "Unusual"
+dla$agency.authority[grepl("academy", dla$station.name, ignore.case=TRUE)] <- "Training Academies"
+dla$agency.authority[grepl("TNG CTR", dla$station.name, ignore.case=TRUE)] <- "Training Academies"
+dla$agency.authority[grepl("TNG CENTER", dla$station.name, ignore.case=TRUE)] <- "Training Academies"
+dla$agency.authority[grepl("TRNG CTR", dla$station.name, ignore.case=TRUE)] <- "Training Academies"
+
+dla$agency.authority[grepl("tribal", dla$station.name, ignore.case=TRUE)] <- "Indian"
+dla$agency.authority[grepl("YAKAMA NATION", dla$station.name, ignore.case=TRUE)] <- "Indian"
+dla$agency.authority[grepl("indian", dla$station.name, ignore.case=TRUE)] <- "Indian"
+dla$agency.authority[grepl("CITIZENS POTAWATOMI NATION PD", dla$station.name, ignore.case=TRUE)] <- "Indian"
+
+dla$agency.authority[grepl("secret service", dla$station.name, ignore.case=TRUE)] <- "Secret Service"
+dla$agency.authority[grepl("BUREAU OF INVESTIGATIO", dla$station.name, ignore.case=TRUE)] <- "Other State Agencies (Non Security)"
+dla$agency.authority[grepl("EMERGENCY MGMT", dla$station.name, ignore.case=TRUE)] <- "Other State Agencies (Non Security)"
+dla$agency.authority[grepl("OF REVENUE", dla$station.name, ignore.case=TRUE)] <- "Other State Agencies (Non Security)"
+dla$agency.authority[grepl("livestock", dla$station.name, ignore.case=TRUE)] <- "Other State Agencies (Non Security)"
+dla$agency.authority[grepl("DEPT OF HEALTH AND HUMAN", dla$station.name, ignore.case=TRUE)] <- "Other State Agencies (Non Security)"
+dla$agency.authority[grepl("DEPT OF MGMT SVC", dla$station.name, ignore.case=TRUE)] <- "Other State Agencies (Non Security)"
 
 
-dla$Agency_Authority[grepl("harbor", dla$Station.Name, ignore.case=TRUE)] <- "Harbors, Dams, Waterways, and Resevoirs"
-dla$Agency_Authority[grepl("river", dla$Station.Name, ignore.case=TRUE)] <- "Harbors, Dams, Waterways, and Resevoirs"
-dla$Agency_Authority[grepl("lake", dla$Station.Name, ignore.case=TRUE)] <- "Harbors, Dams, Waterways, and Resevoirs"
-dla$Agency_Authority[grepl("resevoir", dla$Station.Name, ignore.case=TRUE)] <- "Harbors, Dams, Waterways, and Resevoirs"
-dla$Agency_Authority[grepl("port", dla$Station.Name, ignore.case=TRUE)] <- "Harbors, Dams, Waterways, and Resevoirs"
-dla$Agency_Authority[grepl("HARBORMASTER", dla$Station.Name, ignore.case=TRUE)] <- "Harbors, Dams, Waterways, and Resevoirs"
+dla$agency.authority[grepl("RAILWAY", dla$station.name, ignore.case=TRUE)] <- "Unusual"
+dla$agency.authority[grepl("LIVE STOCK BOARD", dla$station.name, ignore.case=TRUE)] <- "Unusual"
+dla$agency.authority[grepl("SKI VALLEY", dla$station.name, ignore.case=TRUE)] <- "Unusual"
+dla$agency.authority[grepl("HOSPITAL PD", dla$station.name, ignore.case=TRUE)] <- "Unusual"
+
+dla$agency.authority[grepl("GAMING AGENCY", dla$station.name, ignore.case=TRUE)] <- "Unusual"
+
+
+dla$agency.authority[grepl("harbor", dla$station.name, ignore.case=TRUE)] <- "Harbors, Dams, Waterways, and Resevoirs"
+dla$agency.authority[grepl("river", dla$station.name, ignore.case=TRUE)] <- "Harbors, Dams, Waterways, and Resevoirs"
+dla$agency.authority[grepl("lake", dla$station.name, ignore.case=TRUE)] <- "Harbors, Dams, Waterways, and Resevoirs"
+dla$agency.authority[grepl("resevoir", dla$station.name, ignore.case=TRUE)] <- "Harbors, Dams, Waterways, and Resevoirs"
+dla$agency.authority[grepl("port", dla$station.name, ignore.case=TRUE)] <- "Harbors, Dams, Waterways, and Resevoirs"
+dla$agency.authority[grepl("HARBORMASTER", dla$station.name, ignore.case=TRUE)] <- "Harbors, Dams, Waterways, and Resevoirs"
 
 
 
@@ -318,8 +314,8 @@ dla$Agency_Authority[grepl("HARBORMASTER", dla$Station.Name, ignore.case=TRUE)] 
 #---------- This is a test for NAs -----------------
 #agency.authority.test <-
 # dla %>%
-# select(Station.Name, Agency_Authority, Agency_Jurisdiction)  %>%
-# filter(is.na(Agency_Authority))
+# select(station.name, agency.authority, agency.jurisdiction)  %>%
+# filter(is.na(agency.authority))
 #View(distinct(agency.authority.test))
 
 
@@ -335,41 +331,41 @@ dla<- left_join(dla,tbl.agency.authority)
 
 
 # Correct Agency Jurisdiction Missing values
-dla$Agency_Jurisdiction[grepl("DEA", dla$Agency_Authority, ignore.case = FALSE)] <- "Federal"
-dla$Agency_Jurisdiction[grepl("FBI", dla$Agency_Authority, ignore.case = FALSE)] <- "Federal"
-dla$Agency_Jurisdiction[grepl("DOT", dla$Agency_Authority, ignore.case = FALSE)] <- "Federal"
-dla$Agency_Jurisdiction[grepl("CIA", dla$Agency_Authority, ignore.case = FALSE)] <- "Federal"
+dla$agency.jurisdiction[grepl("DEA", dla$agency.authority, ignore.case = FALSE)] <- "Federal"
+dla$agency.jurisdiction[grepl("FBI", dla$agency.authority, ignore.case = FALSE)] <- "Federal"
+dla$agency.jurisdiction[grepl("DOT", dla$agency.authority, ignore.case = FALSE)] <- "Federal"
+dla$agency.jurisdiction[grepl("CIA", dla$agency.authority, ignore.case = FALSE)] <- "Federal"
 
 
-dla$Agency_Jurisdiction[grepl("corrections", dla$Agency_Authority, ignore.case = TRUE)] <- "Other"
+dla$agency.jurisdiction[grepl("corrections", dla$agency.authority, ignore.case = TRUE)] <- "Other"
 
-dla$Agency_Jurisdiction[grepl("Fish", dla$Agency_Authority, ignore.case = TRUE)] <- "State"
-dla$Agency_Jurisdiction[grepl("Park", dla$Agency_Authority, ignore.case = TRUE)] <- "State"
-dla$Agency_Jurisdiction[grepl("Coroner", dla$Agency_Authority, ignore.case = TRUE)] <- "County"
-dla$Agency_Jurisdiction[grepl("County", dla$Agency_Authority, ignore.case = TRUE)] <- "County"
-dla$Agency_Jurisdiction[grepl("Unknown", dla$Agency_Authority, ignore.case = TRUE)] <- "Unknown"
-dla$Agency_Jurisdiction[grepl("Interior", dla$Agency_Authority, ignore.case = TRUE)] <- "Federal"
-dla$Agency_Jurisdiction[grepl("Forest", dla$Agency_Authority, ignore.case = TRUE)] <- "Federal"
-dla$Agency_Jurisdiction[grepl("State", dla$Agency_Authority, ignore.case = TRUE)] <- "State"
-dla$Agency_Jurisdiction[grepl("District", dla$Agency_Authority, ignore.case = TRUE)] <- "County"
-dla$Agency_Jurisdiction[grepl("Highway Patrol", dla$Agency_Authority, ignore.case = TRUE)] <- "State"
-dla$Agency_Jurisdiction[grepl("Fire Dept", dla$Agency_Authority, ignore.case = TRUE)] <- "Municipal"
-dla$Agency_Jurisdiction[grepl("TWP", dla$Agency_Authority, ignore.case = TRUE)] <- "Municipal"
+dla$agency.jurisdiction[grepl("Fish", dla$agency.authority, ignore.case = TRUE)] <- "State"
+dla$agency.jurisdiction[grepl("Park", dla$agency.authority, ignore.case = TRUE)] <- "State"
+dla$agency.jurisdiction[grepl("Coroner", dla$agency.authority, ignore.case = TRUE)] <- "County"
+dla$agency.jurisdiction[grepl("County", dla$agency.authority, ignore.case = TRUE)] <- "County"
+dla$agency.jurisdiction[grepl("Unknown", dla$agency.authority, ignore.case = TRUE)] <- "Unknown"
+dla$agency.jurisdiction[grepl("Interior", dla$agency.authority, ignore.case = TRUE)] <- "Federal"
+dla$agency.jurisdiction[grepl("Forest", dla$agency.authority, ignore.case = TRUE)] <- "Federal"
+dla$agency.jurisdiction[grepl("State", dla$agency.authority, ignore.case = TRUE)] <- "State"
+dla$agency.jurisdiction[grepl("District", dla$agency.authority, ignore.case = TRUE)] <- "County"
+dla$agency.jurisdiction[grepl("Highway Patrol", dla$agency.authority, ignore.case = TRUE)] <- "State"
+dla$agency.jurisdiction[grepl("Fire Dept", dla$agency.authority, ignore.case = TRUE)] <- "Municipal"
+dla$agency.jurisdiction[grepl("TWP", dla$agency.authority, ignore.case = TRUE)] <- "Municipal"
 
 
-dla$Agency_Jurisdiction[grepl("forest", dla$Agency_Authority, ignore.case = TRUE)] <- "Federal"
-dla$Agency_Jurisdiction[grepl("indian", dla$Agency_Authority, ignore.case = TRUE)] <- "Tribal"
-dla$Agency_Jurisdiction[grepl("Secret Service", dla$Agency_Authority, ignore.case = TRUE)] <- "Federal"
-dla$Agency_Jurisdiction[grepl("DHS", dla$Agency_Authority, ignore.case = TRUE)] <- "Federal"
-dla$Agency_Jurisdiction[grepl("Public Safety", dla$Agency_Authority, ignore.case = TRUE)] <- "State"
+dla$agency.jurisdiction[grepl("forest", dla$agency.authority, ignore.case = TRUE)] <- "Federal"
+dla$agency.jurisdiction[grepl("indian", dla$agency.authority, ignore.case = TRUE)] <- "Tribal"
+dla$agency.jurisdiction[grepl("Secret Service", dla$agency.authority, ignore.case = TRUE)] <- "Federal"
+dla$agency.jurisdiction[grepl("DHS", dla$agency.authority, ignore.case = TRUE)] <- "Federal"
+dla$agency.jurisdiction[grepl("Public Safety", dla$agency.authority, ignore.case = TRUE)] <- "State"
 
 
 
 #  TEST FOR MISSING VALUYES IN Jurisdiction Show NAs #####################
 #agency.jurisdiction.test <-
  # dla %>%
-  #select(Station.Name, Agency_Authority, Agency_Jurisdiction)  %>%
-  #filter(is.na(Agency_Jurisdiction))
+  #select(station.name, agency.authority, agency.jurisdiction)  %>%
+  #filter(is.na(agency.jurisdiction))
 #View(distinct(agency.jurisdiction.test))
 
 # ################################ ADD METADATA: State Regions ###################################################
@@ -382,5 +378,5 @@ colnames(state.regions)
 #Join 
 dla <- left_join(dla, state.regions)
 
-#### End Here #######
+# ################################ ADD Add GeoCodes ###################################################
 
