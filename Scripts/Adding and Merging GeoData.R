@@ -1,5 +1,6 @@
 library(RDSTK)
 library(dplyr)
+
 # Import dla geocoordinates
 dla.geocoordinates.1of3 <- tbl_df(read.csv("~/Documents/R Programming/data-1033-program/DataSets/dla.geocoordinates.1of3.csv", stringsAsFactors=FALSE))
 # Remove NAs
