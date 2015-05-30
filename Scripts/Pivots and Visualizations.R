@@ -128,4 +128,4 @@ aps<- dla %>%
 
   ggvis(aps, ~Year, ~Cost) %>% layer_bars()
 
-
+# Hellooooooooooooooo, Chris!
