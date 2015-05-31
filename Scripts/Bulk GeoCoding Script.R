@@ -114,7 +114,6 @@ dla.geocoordinates.complete <- bind_rows(list(dla.geocoordinates.1of3, dla.geoco
 # write to new file, in case R crashes
 write.csv(dla.geocoordinates.complete, "~/Documents/R Programming/data-1033-program/DataSets/dla.geocoordinates.complete.csv")
 
-
 # Identify the NAs (489); lament
 filter(dla.geocoordinates.complete, lon %in% NA) %>%
   arrange(Station.Name)
@@ -124,6 +123,30 @@ dla <- left_join(dla, dla.geocoordinates.complete)
 
 # Save, in case R crashes
 write.csv(dla, "~/Documents/R Programming/data-1033-program/DataSets/dla.csv")
+
+
+## Add Political Info ##
+# Get associated political info
+
+# Establish dataset
+addresses <- distinct(select(dla, Station.Name, lat, lon))
+
+# Test use of coordinates2politics, from RDSTK, with 10 addresses
+test.addresses <- select(addresses[1:10, ], lat, lon)
+
+
+# concatenate lat/lon into single column with mutate
+test.addresses <- test.addresses %>%
+mutate(concatenated_column = paste(lat, lon, sep = ","))
+
+
+test.addresses.politics <- coordinates2politics(test.addresses$concatenated_column)
+coordinates2politics(test.addresses$lat[1], test.addresses$lon[1])
+
+test.geo <- coordinates2politics(test.addresses$lat[1], test.addresses$lon[1])
+
+
+?coordinates2politics
 
 
 ### End ####
