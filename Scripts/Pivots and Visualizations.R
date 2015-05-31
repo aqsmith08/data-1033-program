@@ -16,6 +16,8 @@ x <- getURL("https://raw.githubusercontent.com/aqsmith08/data-1033-program/maste
 dla <- read.csv(text = x)
 dla <- tbl_df(dla)
 
+
+
 # Here are the factor for FSGC_Title, High Caliber weapons 
 #[261] "Guns 75mm through 125mm"                         
 #[262] "Guns over 125mm through 150mm"                   
