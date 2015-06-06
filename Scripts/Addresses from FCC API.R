@@ -30,8 +30,7 @@ fcc.url <- paste0(x,addresses$lat,y,addresses$lon,z)
 fcc.url  <- as.data.frame(fcc.url)
 addresses <- bind_cols(addresses,fcc.url)
 
-# Question: Now how do I download the column of urls?
-# I've tried using GET (RCURL library) but can't seem to get it to work....
+# Download list of URLs (Aaron's brilliant code)
 addresses$getURL <- sapply(addresses$fcc.url, function(x) getURL(x))
 
 # Saving the addresses dataframe because it took so long
