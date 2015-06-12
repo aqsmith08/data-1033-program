@@ -1,10 +1,13 @@
+library(XML)
+library(dplyr)
+
 
 # Read in data from FCC
 addresses_with_xml <- read.csv("~/Documents/R Programming/Repositories/data-1033-program/DataSets/addresses_with_xml.csv", stringsAsFactors=FALSE)
 
 # There are bad responses! Set bad responses to NA
 addresses_with_xml$getURL[grepl("Not Found", addresses_with_xml$getURL)] <- NA
-View(addresses_with_xml)
+
 
 # Good XML Responses
 addresses.ok <- addresses_with_xml[(complete.cases(addresses_with_xml$getURL)),]
@@ -43,7 +46,16 @@ nrow(df)
 # Combine
 addresses_with_xml_and_FCC <- bind_cols(addresses.ok,df)
 
+#Check for NAs one more time, this time in the Block.FIPS field
+addresses_with_xml_and_FCC_BAD <- addresses_with_xml_and_FCC[!(complete.cases(addresses_with_xml_and_FCC$Block.FIPS)),]
+nrow(addresses_with_xml_and_FCC_BAD)
+# 96 More NAs...damn!
+
+# Good Addresses
+addresses_with_xml_and_FCC_GOOD <- addresses_with_xml_and_FCC[!(complete.cases(addresses_with_xml_and_FCC$Block.FIPS)),]
+
+
 # Write to file, for safety
-write.csv(addresses_with_xml_and_FCC, "~/Documents/R Programming/Repositories/data-1033-program/DataSets/addresses_with_xml_and_FCC.csv")
+write.csv(addresses_with_xml_and_FCC_GOOD, "~/Documents/R Programming/Repositories/data-1033-program/DataSets/addresses_with_xml_and_FCC.csv")
 
 
