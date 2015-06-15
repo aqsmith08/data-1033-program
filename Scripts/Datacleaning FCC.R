@@ -1,6 +1,7 @@
 library(XML)
 library(dplyr)
 library(stringr)
+library(googlesheets)
 
 # Read in data from FCC
 addresses_with_xml <- read.csv("~/Documents/R Programming/Repositories/data-1033-program/DataSets/addresses_with_xml.csv", stringsAsFactors=FALSE)
@@ -78,27 +79,40 @@ glimpse(addresses_with_xml_and_FCC_GOOD) # 5974 good responses
 5974 + 585                               # 6559 total responses: TRUE!
 # Synopsis: Result shows that all records accounted for
 
-# Geocode using lat/lon 
-# Create an "address" column of latitude and longitude for google to recognize
-geocoding.bad.a <- all.bad.xml.addresses.from.fcc %>% 
-  na.omit() %>%
-  mutate(address = str_c(geocoding.bad.a$lat, geocoding.bad.a$lon, sep = ", "))
+# Assume all data related to these bad records is Crap.
+all.bad.xml.addresses.from.fcc <- all.bad.xml.addresses.from.fcc %>%
+  select(address = Station.Name)
 
-# Geocode bad addresses based on lon/lat
-geocoding.bad.a$Google <- geocode(geocoding.bad.a$address, output = "more")
-View(geocoding.bad.a)
-# Wow. These results (based on lat/lon) are outside the U.S. in places like Iran. That Did Not Work.
-
-# Try geocoding bad addresses again based on Station Name
-# Rename station name file to "address" so google will recognize it
-colnames(all.bad.xml.addresses.from.fcc)[2] <- "address"
-geocoding.bad.b <- all.bad.xml.addresses.from.fcc
-geocoding.bad.b$Google <- geocode(geocoding.bad.b$address, output = "all")
-# Examine results
-View(geocoding.bad.b)
-# Nothing. Mostly zero results, but Google Mpas DOES find the stations when I search on actual website. Do Not Understand.
+write.csv(all.bad.xml.addresses.from.fcc,"~/Documents/R Programming/Repositories/data-1033-program/DataSets/all.bad.xml.addresses.from.fcc.csv")
 
 
+# Try geocoding bad addresses again based on Station Name. Google Maps recognizes them on the website.
+# Why won't it see them on in the API?
 
+# Try Bing
+all.bad.xml.addresses.from.fcc$bing <- geocode(all.bad.xml.addresses.from.fcc, service = "bing", output = "more")
+options(BingMapsKey='Aj8Ml0zfRsOL00abNX4AqYCEr4CzM07lPZhvPGXtq1eIJn9sVwudBUHcUpmp0ZM7')
 
+# And Google (Again)
+all.bad.xml.addresses.from.fcc$google <- geocode(all.bad.xml.addresses.from.fcc, service = "google", output = "more")
+
+# Nothing. Mostly zero results, but Google Maps DOES find the stations when I search on the actual website, one at a time. 
+# So I'm off to search these 500+ stations by hand using the website. Awful.
+
+# Upload the bad addresses into a GoogleSheet
+googlesheet.fixing.bad.addresses.by.hand <- "https://docs.google.com/spreadsheets/d/1yrBOX3PrJ2v836AW9_1jPtnHIaOAPia2hoK1WdWYL2s/pubhtml"
+
+# Access the sheet with R (using googlesheets)
+# devtools::install_github("jennybc/googlesheets")
+# library(googlesheets)
+
+# For first time users of google sheets
+#Authenticate My account
+gs_auth(new_user = T)
+
+# Register the individual spreadsheet
+badg <- gs_title("Bad FCC Addresses")
+
+# Read from the GoogleSpreadsheet
+fixing <- gs_read_csv(badg, ws = 1)
 
