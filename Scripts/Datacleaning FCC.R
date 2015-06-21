@@ -217,6 +217,7 @@ View(FCC.complete.uniques %>% group_by(station.name, County.name) %>% summarise(
 # Read in cleaned dla transaction data (194,792 observations)
 dla <- read.csv("~/Documents/R Programming/Repositories/data-1033-program/DataSets/1033_DLA_data_as_of_march_2015_CLEANED.csv", stringsAsFactors=FALSE)
 tbl_df(dla)
+
 # BIG JOIN!
 dla.joined <- left_join(dla, FCC.complete.uniques, by = "station.name")
 dla.joined <- tbl_df(dla.joined)
