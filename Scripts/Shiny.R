@@ -3,7 +3,7 @@ library(lubridate)
 library(shiny)
 library(ggvis)
 
-file <- "1033_DLA_data_as_of_march_2015.csv"
+file <- "MAIN_Transaction Dataset, Updated 06-20-2015, 2020.csv"
 dla <- read.csv(file, stringsAsFactors = FALSE)
 
 # Create a year column using the lubridate package
